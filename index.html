@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML 預覽器 | HTML Previewer</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <h1>AI HTML 助手</h1>
+        <div class="api-key-section">
+          <input type="password" id="apiKeyInput" placeholder="請輸入 OpenAI API Key" />
+          <button id="saveKeyBtn">保存</button>
+        </div>
+      </header>
+      
+      <main class="container">
+        <div class="chat-section">
+          <div class="chat-header">
+            <span class="chat-label">AI 對話</span>
+            <button id="clearChatBtn">清空對話</button>
+          </div>
+          <div id="chatMessages" class="chat-messages"></div>
+          <div class="chat-input-section">
+            <textarea 
+              id="chatInput" 
+              placeholder="請描述您想要的 HTML 代碼或網頁效果..."
+              rows="3"
+            ></textarea>
+            <button id="sendBtn">發送</button>
+          </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="preview-section">
+          <div class="preview-toolbar">
+            <div class="mode-toggle">
+              <button id="htmlModeBtn" class="mode-btn active">HTML 編輯</button>
+              <button id="previewModeBtn" class="mode-btn">預覽效果</button>
+            </div>
+            <button id="copyCodeBtn">複製代碼</button>
+          </div>
+          
+          <div id="htmlMode" class="mode-content">
+            <textarea 
+              id="htmlInput" 
+              placeholder="AI 生成的 HTML 代碼將顯示在這裡，您也可以手動編輯..."
+              spellcheck="false"
+            ></textarea>
+          </div>
+          
+          <div id="previewMode" class="mode-content hidden">
+            <iframe 
+              id="preview" 
+              title="HTML 預覽"
+            ></iframe>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
