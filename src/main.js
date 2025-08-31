@@ -31,12 +31,10 @@ class AIHTMLAssistant {
       this.apiKeyInput.value = this.apiKey;
     }
     
-    // 如果有環境變量 API key，隱藏 API key 輸入區域
-    if (import.meta.env.VITE_OPENAI_API_KEY) {
-      const apiKeySection = document.querySelector('.api-key-section');
-      if (apiKeySection) {
-        apiKeySection.style.display = 'none';
-      }
+    // 直接隱藏 API key 輸入區域（用於生產部署）
+    const apiKeySection = document.querySelector('.api-key-section');
+    if (apiKeySection) {
+      apiKeySection.style.display = 'none';
     }
 
     // 事件監聽器
